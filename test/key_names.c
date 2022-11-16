@@ -33,6 +33,12 @@
 #include <test.priv.h>
 
 #if USE_WIDEC_SUPPORT
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
 
 static void
 usage(void)

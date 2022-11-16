@@ -249,6 +249,13 @@ _nc_Disconnect_Items(MENU *menu)
 |
 |   Return Values :  the width
 +--------------------------------------------------------------------------*/
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
 MENU_EXPORT(int)
 _nc_Calculate_Text_Width(const TEXT *item /*FIXME: limit length */ )
 {

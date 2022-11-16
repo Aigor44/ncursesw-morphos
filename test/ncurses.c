@@ -3955,6 +3955,13 @@ merge_wide_attr(cchar_t *dst, const cchar_t *src, attr_t attr, NCURSES_PAIRS_T p
  * characters (1024 total).  However, taking repeats and double-width cells
  * into account, use 256 characters for the page.
  */
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
 static void
 show_paged_widechars(unsigned base,
 		     unsigned pagesize,

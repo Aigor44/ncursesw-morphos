@@ -190,6 +190,14 @@ legend(WINDOW *win, int level, Options state, wchar_t *buffer, int length)
     waddstr(win, ">");
 }
 
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
+
 static int
 ColOf(const wchar_t *buffer, int length, int margin)
 {

@@ -86,6 +86,13 @@ failed(const char *msg)
     ExitProgram(EXIT_FAILURE);
 }
 
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
 static int
 ch_len(NCURSES_CH_T *src)
 {

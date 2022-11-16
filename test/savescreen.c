@@ -163,6 +163,12 @@ get_command(int color, int which, int last)
 
     return ch;
 }
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
 
 static int
 dump_screen(char **files, int color, int which, int last, bool use_colors)

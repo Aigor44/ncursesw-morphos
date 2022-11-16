@@ -104,6 +104,14 @@ Perhaps at some time we will make this configurable at runtime.
 #define myINSNSTR(w, s, n) wide_winsnstr(w, s, n)
 #define myINNSTR(w, s, n)  wide_winnstr(w, s, n)
 #define myWCWIDTH(w, y, x) cell_width(w, y, x)
+
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
 #else
 #define myADDNSTR(w, s, n) waddnstr(w, s, n)
 #define myINSNSTR(w, s, n) winsnstr(w, s, n)

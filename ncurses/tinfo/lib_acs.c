@@ -257,6 +257,13 @@ _nc_init_acs(void)
 #endif
 
 #if !NCURSES_WCWIDTH_GRAPHICS
+//MLA-begin
+#ifdef __MORPHOS__
+#define wcwidth morphos_wcwidth
+int wcwidth(wchar_t ucs);
+#endif
+//MLA-end
+
 NCURSES_EXPORT(int)
 _nc_wacs_width(unsigned ch)
 {
