@@ -1,0 +1,7 @@
+#!/bin/ksh
+
+./configure --prefix=/work/opt/ncursesw \
+            --enable-widec              \
+            --without-ada               \
+            --without-pkg-config        \
+            --with-terminfo-dirs=/work/opt/ncursesw/share/terminfo:/gg/share/terminfo
