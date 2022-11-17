@@ -61,6 +61,15 @@
 
 #endif
 
+//MLA-begin
+#ifdef __MORPHOS__
+#include "dwarf_tsearchred.c"
+#define tdelete   dwarf_tdelete
+#define tfind     dwarf_tfind
+#define tsearch   dwarf_tsearch
+#endif
+//MLA-end
+
 MODULE_ID("$Id: new_pair.c,v 1.23 2021/08/16 22:11:26 tom Exp $")
 
 #if NCURSES_EXT_COLORS

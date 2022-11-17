@@ -5,3 +5,15 @@
             --without-ada               \
             --without-pkg-config        \
             --with-terminfo-dirs=/work/opt/ncursesw/share/terminfo:/gg/share/terminfo
+
+         #  --prefix=/work/opt/ncursesw  the package will be installed in /work/opt/ncursesw
+         #  --enable-widec               compile with wide-char/UTF-8 code
+         #  --without-ada                suppress check for Ada compiler, don't build demo
+         #  --without-pkg-config         disable use of pkg-config
+         #
+         #  --with-terminfo-dirs=/work/opt/ncursesw/share/terminfo:/gg/ncurses/share/terminfo
+         #                               Specify a search-list of terminfo directories which will be compiled into the ncurses library (default: DATADIR/terminfo)
+         #                               Programs linked with this library will get terminfo from
+         #                                 1. /work/opt/ncursesw/share/terminfo     # the terminfo on the installation directory
+         #                                 2. /gg/ncurses/share/terminfo            # the terminfo available on a MorphOS system
+         
